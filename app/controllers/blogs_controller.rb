@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.limit(5)
+    @blogs = Blog.limit(10)
   end
 
   def new
