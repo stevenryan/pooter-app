@@ -7,3 +7,28 @@
   text-align: center;
   padding-bottom: 20px;
 }
+
+.login-image{
+  position: absolute;
+  img{
+    max-width: 300px;
+  }
+  .site-title{
+    margin: -10px 0 0 -188px;
+    color: black;
+  }
+}
+
+.signup-image{
+  img{
+    margin: 0 auto;
+    margin-top: 240px;
+    display: block;
+    max-width: 300px;
+  }
+  .site-title2{
+    margin: -7px 0 0 175px;
+    text-align: center;
+    color: black;
+  }
+}
