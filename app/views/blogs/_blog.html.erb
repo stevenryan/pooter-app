@@ -1,0 +1,15 @@
+<div class="col-sm-3 single-post-card" id=<%= blog_path(blog.id) %>>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="post-text">
+        <%= truncate(blog.title, :length => 60) %>
+      </h4>
+      <div class="post-content">
+        <div class="posted-by">Posted by <%= blog.user.name %></div>
+        <h3><%= blog.title %></h3>
+        <p><%= blog.content %></p>
+        <%= link_to "I'm interested", blog_path(blog.id), class: 'interested' %>
+      </div>
+    </div>
+  </div><!-- card -->
+</div><!-- col-sm-3 -->
