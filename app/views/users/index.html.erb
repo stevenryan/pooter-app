@@ -1,1 +1,12 @@
-<h1>All Users List</h1>
+<div class="container">
+  <div class="row">
+    <%= render 'blogs/index/side_menu' %>
+    <div id="main-content" class="col-sm-9">
+      <% @users.each do |u| %>
+        <div class="user-names">
+          <%= u.name %>
+        </div>
+      <% end %>
+    </div><!-- main-content -->
+  </div><!-- row -->
+</div><!-- container -->
