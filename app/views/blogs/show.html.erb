@@ -1,2 +1,9 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<div id="single-post-content" class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="posted-by">Posted by <%= @blog.user.name %></div>
+      <h3><%= @blog.title %></h3>
+      <p><%= @blog.content %></p>
+    </div>
+  </div><!-- row -->
+</div>
