@@ -1,2 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render 'blogs/modal' %>
+
+<div class="container">
+  <div class="row">
+    <%= render 'users/profile/side_content' %>
+    <%= render 'users/profile/main_content' %>
+  </div><!-- row -->
+</div><!-- container -->
+
+<%= javascript_include_tag 'blogs/style.js'%>
+<%= javascript_include_tag 'blogs/modal.js'%>

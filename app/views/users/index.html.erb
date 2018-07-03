@@ -2,9 +2,11 @@
   <div class="row">
     <%= render 'blogs/index/side_menu' %>
     <div id="main-content" class="col-sm-9">
+      <h1 class="text-center">All Users</h1>
       <% @users.each do |u| %>
         <div class="user-names">
-          <%= u.name %>
+          <a href='/users/<%= u.id %>'><%= u.name %></a>
+          <p><%= u.email %></p>
         </div>
       <% end %>
     </div><!-- main-content -->

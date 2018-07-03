@@ -1,0 +1,10 @@
+<div id="main-content" class="col-sm-9">
+  <h4 class="text-center">
+    <% if current_user.id == @user.id %>
+      Your Posts
+    <% else %>
+      <%= @user.name%>'s Posts
+    <% end %>
+  </h4>
+  <%= render @user.blogs.reverse %>
+</div><!-- main-content -->

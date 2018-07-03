@@ -6,6 +6,20 @@
 
 <li id="">
   <%= link_to root_path do %>
-    <i class="fa fa-pencil" aria-hidden="true"></i> Dashboard
+    <i class="fa fa-book" aria-hidden="true"></i> Dashboard
   <% end %>
 </li>
+
+<% if user_signed_in? %>
+  <li id="">
+    <%= link_to new_blog_path do %>
+      <i class="fa fa-pencil-alt" aria-hidden="true"></i> Create Post
+    <% end %>
+  </li>
+
+  <li id="">
+    <a href='/users/<%= current_user.id %>'>
+      <i class="fa fa-poo" aria-hidden="true"></i> Your Posts
+    </a>
+  </li>
+<% end %>

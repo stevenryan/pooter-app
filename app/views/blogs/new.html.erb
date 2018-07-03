@@ -1,2 +1,25 @@
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+<div class="container new-post">
+  <div class="row">
+    <%= render 'blogs/index/side_menu' %>
+    <div id="main-content" class="col-sm-9">
+      <h1>Create a new post</h1>
+        <%= bootstrap_form_for @blog do |f| %>
+          <%= f.text_field  :title,
+                            maxlength: 100,
+                            placeholder: 'Title',
+                            class: 'form-control',
+                            required: true,
+                            minlength: 5,
+                            maxlength: 100 %>
+          <%= f.text_area :content,
+                          rows: 6,
+                          required: true,
+                          minlength: 10,
+                          maxlength: 1000,
+                          placeholder: 'Enter post content here',
+                          class: 'form-control' %>
+          <%= f.submit "Create a post", class: 'form-control' %>
+        <% end %>
+    </div>
+  </div>
+</div>
