@@ -1,7 +1,18 @@
-<h2>Edit Comment</h2>
-<%= form_for ([@blog, @comment]) do |f| %>
-<%= f.text_field :content %><br>
-    <%= f.submit "update" %>
-<% end %>
-<%= link_to "delete comment", blog_comment_path, method: :delete,
- data: {confirm: "are you sure? you cannot undo this action."} %>
+<div class="container new-post">
+  <div class="row">
+    <%= render 'blogs/index/side_menu' %>
+    <div id="main-content" class="col-sm-9">
+      <h1>Edit Comment</h1>
+        <%= bootstrap_form_for ([@blog, @comment]) do |f| %>
+          <%= f.text_area :content,
+                          rows: 6,
+                          required: true,
+                          placeholder: @comment.content,
+                          class: 'form-control' %>
+          <%= f.submit "Update", class: 'form-control' %>
+        <% end %>
+        <%= link_to "delete comment", blog_comment_path, method: :delete,
+         data: {confirm: "are you sure? you cannot undo this action."} %>
+    </div>
+  </div>
+</div>

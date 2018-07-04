@@ -10,31 +10,31 @@
       <a href="/blogs/<%=@blog.id%>/edit">Edit</a>
       <% end %>
       <br>
-      <h4>Comments</h4>
-        <% @blog.comments.each do |c| %>
-          <% if c.id == nil %>
-            <% c.user_id = 0 %>
-          <% else %>
-            <u>Comment:</u> <%= c.content %><br>
-            <u>By:</u> <%= c.user.name %>
-          <% end %>
-        <br>
-          <% if user_signed_in? && current_user.id == c.user_id %>
-            <div id="link"><a href="/blogs/<%=@blog.id%>/comments/<%=c.id%>/edit">edit comment</a>
-            </div>
+      <div class="comment-section">
+        <h4 class="text-center">Comments</h4>
+          <% @blog.comments.each do |c| %>
+            <% if c.id == nil %>
+              <% c.user_id = 0 %>
+            <% else %>
+              <strong><%= c.user.name %></strong>: <%= c.content %><br>
+            <% end %>
+            <% if user_signed_in? && current_user.id == c.user_id %>
+              <div id="link"><a href="/blogs/<%=@blog.id%>/comments/<%=c.id%>/edit">edit comment</a></div>
+            <% end %>
 
-            <hr>
+              <hr>
           <% end %>
-        <% end %>
 
-        <% if user_signed_in? %>
-          <%= bootstrap_form_for([@blog, @blog.comments.build]) do |f| %>
-            <%= f.text_field :content %><br />
-            <%= f.submit "Comment" %>
+          <% if user_signed_in? %>
+            <%= bootstrap_form_for([@blog, @blog.comments.build]) do |f| %>
+              <%= f.text_field :content %><br />
+              <%= f.submit "Comment" %>
+            <% end %>
           <% end %>
-        <% end %>
 
-        <br>
+          <br>
+      </div>
+
     </div>
 
   </div><!-- row -->
