@@ -1,0 +1,7 @@
+<h2>Edit Comment</h2>
+<%= form_for ([@blog, @comment]) do |f| %>
+<%= f.text_field :content %><br>
+    <%= f.submit "update" %>
+<% end %>
+<%= link_to "delete comment", blog_comment_path, method: :delete,
+ data: {confirm: "are you sure? you cannot undo this action."} %>
