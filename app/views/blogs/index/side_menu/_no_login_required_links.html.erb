@@ -11,13 +11,13 @@
 </li>
 
 <% if user_signed_in? %>
-  <li id="">
+  <li>
     <%= link_to new_blog_path do %>
       <i class="fa fa-pencil-alt" aria-hidden="true"></i> Create Post
     <% end %>
   </li>
 
-  <li id="">
+  <li>
     <a href='/users/<%= current_user.id %>'>
       <i class="fa fa-poo" aria-hidden="true"></i> Your Posts
     </a>
