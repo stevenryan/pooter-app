@@ -1,9 +1,13 @@
 <div id="side-menu"  class="col-sm-3">
   <h1><strong>
-    <% if current_user.id == @user.id %>
-    Your Profile
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+      Your Profile
+      <% else %>
+      <%= @user.name%>'s Profile
+      <% end %>
     <% else %>
-    <%= @user.name%>'s Profile
+      <%= @user.name%>'s Profile
     <% end %>
   </strong></h1>
   <h5><%= @user.email%></h5>
